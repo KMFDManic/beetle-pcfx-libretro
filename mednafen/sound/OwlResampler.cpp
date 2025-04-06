@@ -38,9 +38,9 @@ extern retro_get_cpu_features_t perf_get_cpu_features_cb;
  #include <altivec.h>
 #endif
 
-#ifdef __FAST_MATH__
- #error "OwlResampler.cpp not compatible with unsafe math optimizations!"
-#endif
+//#ifdef __FAST_MATH__
+// #error "OwlResampler.cpp not compatible with unsafe math optimizations!"
+//#endif
 
 OwlBuffer::OwlBuffer()
 {

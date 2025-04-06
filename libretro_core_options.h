@@ -53,7 +53,7 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       "disabled"
    },
    {
-      "pcfx_high_dotclock_width",
+      "pcfxtreme_high_dotclock_width",
       "High Dotclock Width (Restart Required)",
       NULL,
       "Emulated width for 7.16 MHz dot-clock mode. Lower values are faster, but will cause some degree of pixel distortion.",
@@ -65,7 +65,7 @@ struct retro_core_option_v2_definition option_defs_us[] = {
          { "1024",  NULL },
          { NULL, NULL},
       },
-      "1024",
+      "256",
    },
    {
       "pcfx_suppress_channel_reset_clicks",
@@ -96,13 +96,17 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       "disabled",
    },
    {
-      "pcfx_resamp_quality",
+      "pcfxtreme_resamp_quality",
       "Sound Quality (Restart Required)",
       NULL,
       "Higher values correspond to a better signal-to-noise ratio and better preservation of higher frequencies ('brightness'), at the cost of increased computational complexity and a negligible increase in latency.",
       NULL,
       NULL,
       {
+         { "-.99",  NULL },
+         { "-.75",  NULL },
+         { "-.50",  NULL },
+         { "-.25",  NULL },
          { "0",  NULL },
          { "1",  NULL },
          { "2",  NULL },
@@ -111,7 +115,7 @@ struct retro_core_option_v2_definition option_defs_us[] = {
          { "5",  NULL },
          { NULL, NULL },
       },
-      "3",
+      "-.50",
    },
    {
       "pcfx_rainbow_chromaip",
@@ -128,7 +132,7 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       "disabled",
    },
    {
-      "pcfx_nospritelimit",
+      "pcfxtreme_nospritelimit",
       "No Sprite Limit (Restart Required)",
       NULL,
       "Remove 16-sprites-per-scanline hardware limit. WARNING: May cause graphics glitching on some games.",
@@ -139,10 +143,10 @@ struct retro_core_option_v2_definition option_defs_us[] = {
          { "enabled",             NULL },
          { NULL, NULL},
       },
-      "disabled",
+      "enabled",
    },
    {
-      "pcfx_initial_scanline",
+      "pcfxtreme_initial_scanline",
       "Initial Scanline",
       NULL,
       "First rendered scanline. Higher values will crop the top of the image.",
@@ -192,10 +196,10 @@ struct retro_core_option_v2_definition option_defs_us[] = {
          { "40",  NULL },
          { NULL, NULL},
       },
-      "4",
+      "16",
    },
    {
-      "pcfx_last_scanline",
+      "pcfxtreme_last_scanline",
       "Last Scanline",
       NULL,
       "Last rendered scanline. Lower values will crop the bottom of the image.",
@@ -236,7 +240,7 @@ struct retro_core_option_v2_definition option_defs_us[] = {
          { "239",   NULL },
          { NULL, NULL},
       },
-      "235",
+      "224",
    },
    {
       "pcfx_mouse_sensitivity",

@@ -309,7 +309,12 @@ else ifneq (,$(findstring armv,$(platform)))
    CC ?= gcc
    LDFLAGS += $(PTHREAD_FLAGS)
    FLAGS += $(PTHREAD_FLAGS)
+   FLAGS += -mfpu=neon -mfloat-abi=hard -ffast-math -Ofast -DWANT_8BPP -DHAVE_THREADS 
+   ASFLAGS += -mfpu=neon
+   HAVE_NEON = 1
    IS_X86 = 0
+   NEED_BPP ?= 8
+   HAVE_THREADS = 1
 ifneq (,$(findstring cortexa8,$(platform)))
    FLAGS += -marm -mcpu=cortex-a8
    ASFLAGS += -mcpu=cortex-a8

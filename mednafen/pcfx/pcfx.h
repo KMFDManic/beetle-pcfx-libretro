@@ -7,7 +7,8 @@
 #include "v810/v810_cpu.h"
 #include "../hw_video/huc6270/vdc.h"
 
-#define PCFX_MASTER_CLOCK	21477272.72
+#define PCFX_MASTER_CLOCK	21586753.09
+//#define PCFX_MASTER_CLOCK	21477272.72
 
 static INLINE void MDFN_FastU32MemsetM8(uint32_t *array, uint32_t value_32, unsigned int u32len)
 {

@@ -21,11 +21,11 @@
 
 #include "settings.h"
 
-int setting_initial_scanline = 0;
-int setting_last_scanline = 239;
-int setting_high_dotclock_width = 1024;
-int setting_nospritelimit = 0;
-int setting_resamp_quality = 3;
+int setting_initial_scanline = 8;
+int setting_last_scanline = 235;
+int setting_high_dotclock_width = 256;
+int setting_nospritelimit = 1;
+int setting_resamp_quality = 0;
 int setting_suppress_channel_reset_clicks = 1;
 int setting_emulate_buggy_codec = 0;
 int setting_rainbow_chromaip = 0;
@@ -55,7 +55,7 @@ int64_t MDFN_GetSettingI(const char *name)
 double MDFN_GetSettingF(const char *name)
 {
    if (!strcmp("pcfx.resamp_rate_error", name))
-      return 0.0000009;
+      return 0.0000001;
    if (!strcmp("pcfx.mouse_sensitivity", name))
       return  	1.25; /* TODO - make configurable */
    return 0;

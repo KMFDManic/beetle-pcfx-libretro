@@ -774,7 +774,7 @@ static Deinterlacer deint;
 #endif
 
 #define MEDNAFEN_CORE_NAME_MODULE "pcfx"
-#define MEDNAFEN_CORE_NAME "Beetle PC-FX"
+#define MEDNAFEN_CORE_NAME "Beetle PC-FXtreme"
 #define MEDNAFEN_CORE_VERSION "v0.9.36.5"
 #define MEDNAFEN_CORE_EXTENSIONS "cue|ccd|toc|chd"
 #define MEDNAFEN_CORE_TIMING_FPS 59.94
@@ -1075,14 +1075,14 @@ static void check_variables(bool loaded)
             cdimagecache = true;
    }
 
-   var.key = "pcfx_high_dotclock_width";
+   var.key = "pcfxtreme_high_dotclock_width";
 
    if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
    {
       setting_high_dotclock_width = atoi(var.value);
    }
 
-   var.key = "pcfx_nospritelimit";
+   var.key = "pcfxtreme_nospritelimit";
 
    if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
    {
@@ -1092,21 +1092,21 @@ static void check_variables(bool loaded)
          setting_nospritelimit = 1;
    }
 
-   var.key = "pcfx_initial_scanline";
+   var.key = "pcfxtreme_initial_scanline";
 
    if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
    {
       setting_initial_scanline = atoi(var.value);
    }
 
-   var.key = "pcfx_last_scanline";
+   var.key = "pcfxtreme_last_scanline";
 
    if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
    {
       setting_last_scanline = atoi(var.value);
    }
 
-   var.key = "pcfx_resamp_quality";
+   var.key = "pcfxtreme_resamp_quality";
 
    if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
    {
@@ -1376,7 +1376,7 @@ bool retro_load_game(const struct retro_game_info *info)
    for (unsigned i = 0; i < MAX_PLAYERS; i++)
       FXINPUT_SetInput(i, "gamepad", &input_buf[i]);
 
-   SoundBox_SetSoundRate(44100.0);
+   SoundBox_SetSoundRate(11025.0);
 
    return true;
 }
@@ -1557,7 +1557,7 @@ void retro_get_system_av_info(struct retro_system_av_info *info)
 {
    memset(info, 0, sizeof(*info));
    info->timing.fps            = MEDNAFEN_CORE_TIMING_FPS;
-   info->timing.sample_rate    = 44100;
+   info->timing.sample_rate    = 11025;
    info->geometry.base_width   = MEDNAFEN_CORE_GEOMETRY_BASE_W;
    info->geometry.base_height  = MEDNAFEN_CORE_GEOMETRY_BASE_H;
    info->geometry.max_width    = MEDNAFEN_CORE_GEOMETRY_MAX_W;

@@ -2303,7 +2303,7 @@ static INLINE void VDC_PIXELMIX(bool SPRCOMBO_ON, bool BGCOMBO_ON)
                                 (((uint32)fx_vce.palette_offset[0] >> 8) & 0xFF) << 1 // SPR
                                };
 
-    const int width = fx_vce.dot_clock ? 342 : 256; // 342, not 341, to prevent garbage pixels in high dot clock mode.
+    const uint_fast16_t width = fx_vce.dot_clock ? 342 : 256; // 342, not 341, to prevent garbage pixels in high dot clock mode.
 
     for(int x = 0; x < width; x++)
     {
@@ -2565,7 +2565,7 @@ static void MixLayers(void)
     #include "king_mix_body.inc"
     #undef YUV888_TO_xxx
 
-    DisplayRect->w = fx_vce.dot_clock ? HighDotClockWidth : 256;
+    DisplayRect->w = fx_vce.dot_clock ? HighDotClockWidth : 243;
     DisplayRect->x = 0;
 
 	// FIXME
